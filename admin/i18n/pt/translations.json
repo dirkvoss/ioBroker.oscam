@@ -1,5 +1,10 @@
 {
     "oscam adapter settings": "Configurações do adaptador para oscam",
     "option1": "Opção 1",
-    "option2": "opção 2"
+    "option2": "opção 2",
+    "Options": "Opções",
+    "Server": "Servidor",
+    "Port": "Porta",
+    "Ip or hostname of your Oscam Server": "IP ou hostname do seu servidor Oscam",
+    "Port your Oscam Server is listening": "A porta do seu servidor Oscam está escutando"
 }

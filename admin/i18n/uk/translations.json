@@ -1,0 +1,8 @@
+{
+    "oscam adapter settings": "Налаштування адаптера для oscam",
+    "Options": "Опції",
+    "Server": "Сервер",
+    "Port": "Порт",
+    "Ip or hostname of your Oscam Server": "IP-адреса або ім’я хоста вашого сервера Oscam",
+    "Port your Oscam Server is listening": "Порт, який прослуховує ваш сервер Oscam"
+}

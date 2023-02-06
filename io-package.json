@@ -13,7 +13,8 @@
                 "it": "Versione iniziale",
                 "es": "Versión inicial",
                 "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版"
+                "zh-cn": "首次出版",
+                "uk": "початковий випуск"
             }
         },
         "title": "OSCAM",
@@ -27,7 +28,8 @@
             "it": "OSCAM",
             "es": "OSCAM",
             "pl": "OSCAM",
-            "zh-cn": "奥萨姆"
+            "zh-cn": "奥萨姆",
+            "uk": "OSCAM"
         },
         "desc": {
             "en": "integrate Oscam server in Iobrober",
@@ -39,7 +41,8 @@
             "it": "integrare il server Oscam in Iobrober",
             "es": "integrar servidor Oscam en Iobrober",
             "pl": "zintegruj serwer Oscam w Iobrober",
-            "zh-cn": "在 Iobrober 中集成 Oscam 服务器"
+            "zh-cn": "在 Iobrober 中集成 Oscam 服务器",
+            "uk": "інтегрувати сервер Oscam в Iobrober"
         },
         "authors": [
             "Dirk Voss <mail@dirk-voss.com>"
@@ -75,8 +78,8 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
+        "serverIp": "",
+        "serverPort": 8080
     },
     "objects": [],
     "instanceObjects": [
