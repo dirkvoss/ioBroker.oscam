@@ -6,5 +6,9 @@
     "Server": "Сервер",
     "Port": "Порт",
     "Ip or hostname of your Oscam Server": "IP или имя хоста вашего сервера Oscam",
-    "Port your Oscam Server is listening": "Порт, который слушает ваш сервер Oscam"
+    "Port your Oscam Server is listening": "Порт, который слушает ваш сервер Oscam",
+    "User": "Пользователь",
+    "User name to login in to Oscam Server": "Имя пользователя для входа на сервер Oscam",
+    "Password": "Пароль",
+    "Password to login in to Oscam Server": "пароль для входа на сервер Oscam"
 }

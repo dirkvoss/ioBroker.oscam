@@ -4,5 +4,9 @@
     "Server": "Сервер",
     "Port": "Порт",
     "Ip or hostname of your Oscam Server": "IP-адреса або ім’я хоста вашого сервера Oscam",
-    "Port your Oscam Server is listening": "Порт, який прослуховує ваш сервер Oscam"
+    "Port your Oscam Server is listening": "Порт, який прослуховує ваш сервер Oscam",
+    "User": "Користувач",
+    "User name to login in to Oscam Server": "Ім’я користувача для входу на сервер Oscam",
+    "Password": "Пароль",
+    "Password to login in to Oscam Server": "assword для входу на сервер Oscam"
 }

@@ -6,5 +6,9 @@
     "Server": "server",
     "Port": "Porta",
     "Ip or hostname of your Oscam Server": "IP o hostname del tuo Oscam Server",
-    "Port your Oscam Server is listening": "Porta il tuo Oscam Server in ascolto"
+    "Port your Oscam Server is listening": "Porta il tuo Oscam Server in ascolto",
+    "User": "Utente",
+    "User name to login in to Oscam Server": "Nome utente per accedere a Oscam Server",
+    "Password": "Parola d'ordine",
+    "Password to login in to Oscam Server": "assword per accedere a Oscam Server"
 }

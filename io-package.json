@@ -79,7 +79,9 @@
     },
     "native": {
         "serverIp": "",
-        "serverPort": 8080
+        "serverPort": 8080,
+        "userName": "",
+        "password": ""
     },
     "objects": [],
     "instanceObjects": [
@@ -101,6 +103,62 @@
                 "read": true,
                 "write": false,
                 "def": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "oscaminfo",
+            "type": "channel",
+            "common": {
+                "name": "Oscam Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "oscaminfo.Version",
+            "type": "state",
+            "common": {
+                "role": "text",
+                "name": "Version",
+                "type": "string",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "oscaminfo.Revision",
+            "type": "state",
+            "common": {
+                "role": "text",
+                "name": "Revision",
+                "type": "string",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "oscaminfo.StartTime",
+            "type": "state",
+            "common": {
+                "role": "text",
+                "name": "StartTime",
+                "type": "string",
+                "read": true,
+                "write": false
+            },
+            "native": {}
+        },
+        {
+            "_id": "oscaminfo.Uptime",
+            "type": "state",
+            "common": {
+                "role": "text",
+                "name": "Uptime",
+                "type": "string",
+                "read": true,
+                "write": false
             },
             "native": {}
         }

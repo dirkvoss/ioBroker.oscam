@@ -6,5 +6,9 @@
     "Server": "服务器",
     "Port": "港口",
     "Ip or hostname of your Oscam Server": "您的 Oscam 服务器的 IP 或主机名",
-    "Port your Oscam Server is listening": "移植您的 Oscam 服务器正在侦听"
+    "Port your Oscam Server is listening": "移植您的 Oscam 服务器正在侦听",
+    "User": "用户",
+    "User name to login in to Oscam Server": "登录 Oscam 服务器的用户名",
+    "Password": "密码",
+    "Password to login in to Oscam Server": "用于登录 Oscam 服务器的密码"
 }

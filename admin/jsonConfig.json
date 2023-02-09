@@ -23,6 +23,22 @@
                     "lg": 6,
                     "label" : "Port",
                     "help" : "Port your Oscam Server is listening"
+                },
+                "userName": {
+                    "type": "text",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "User",
+                    "help": "User name to login in to Oscam Server"
+                },
+                "password": {
+                    "type": "text",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Password",
+                    "help": "Password to login in to Oscam Server"
                 }
             }
         }
