@@ -139,11 +139,11 @@
             "native": {}
         },
         {
-            "_id": "oscaminfo.StartTime",
+            "_id": "oscaminfo.Starttime",
             "type": "state",
             "common": {
                 "role": "text",
-                "name": "StartTime",
+                "name": "Starttime",
                 "type": "string",
                 "read": true,
                 "write": false

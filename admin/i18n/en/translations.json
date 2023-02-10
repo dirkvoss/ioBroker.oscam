@@ -8,5 +8,10 @@
     "User": "User",
     "User name to login in to Oscam Server": "User name to login in to Oscam Server",
     "Password": "Password",
-    "Password to login in to Oscam Server": "assword to login in to Oscam Server"
+    "Password to login in to Oscam Server": "Password to login in to Oscam Server",
+    "Oscam Information": "Oscam Information",
+    "Version": "Version",
+    "Revision": "Revision",
+    "Starttime": "Starttime",
+    "Uptime": "Uptime"
 }

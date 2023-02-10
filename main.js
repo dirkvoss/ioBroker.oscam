@@ -25,6 +25,7 @@ class Oscam extends utils.Adapter {
     async onReady() {
 
         const oscamIpAdress = 'http://' + this.config.serverIp ;
+        const oscamPort = this.config.serverPort;
         const oscamUser = this.config.userName;
         const oscamPassword = this.config.password;
         const oscamUrl = '/oscamapi.html?part=status';
@@ -33,21 +34,19 @@ class Oscam extends utils.Adapter {
         digestRequest.requestAsync({
             host: oscamIpAdress,
             path: oscamUrl,
-            port: 80,
+            port: oscamPort,
             method: 'GET',
             excludePort: false,
             headers: {
                 'Custom-Header': 'OneValue',
                 'Other-Custom-Header': 'OtherValue'
             }
-        })
-            .then(function (response) {
-                console.log(response.body);
-            })
-            .catch(function (error) {
-                console.log(error.statusCode);
-                console.log(error.body);
-            });
+        }).then(function (response) {
+            decode2obj (response.body);
+        }).catch(function (error) {
+            console.log(error.statusCode);
+            console.log(error.body);
+        });
     }
 
 
@@ -132,3 +131,8 @@ if (require.main !== module) {
     // otherwise start the instance directly
     new Oscam();
 }
+
+function decode2obj(response) {
+    console.log (response);
+}
+

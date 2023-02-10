@@ -10,5 +10,10 @@
     "User": "用户",
     "User name to login in to Oscam Server": "登录 Oscam 服务器的用户名",
     "Password": "密码",
-    "Password to login in to Oscam Server": "用于登录 Oscam 服务器的密码"
+    "Password to login in to Oscam Server": "用于登录 Oscam 服务器的密码",
+    "Oscam Information": "欧凯信息",
+    "Version": "版本",
+    "Revision": "修订",
+    "Starttime": "开始时间",
+    "Uptime": "正常运行时间"
 }

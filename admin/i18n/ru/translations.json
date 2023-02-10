@@ -10,5 +10,10 @@
     "User": "Пользователь",
     "User name to login in to Oscam Server": "Имя пользователя для входа на сервер Oscam",
     "Password": "Пароль",
-    "Password to login in to Oscam Server": "пароль для входа на сервер Oscam"
+    "Password to login in to Oscam Server": "пароль для входа на сервер Oscam",
+    "Oscam Information": "Оскам Информация",
+    "Version": "Версия",
+    "Revision": "Редакция",
+    "Starttime": "Время начала",
+    "Uptime": "Время безотказной работы"
 }

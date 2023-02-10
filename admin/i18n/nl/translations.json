@@ -10,5 +10,10 @@
     "User": "Gebruiker",
     "User name to login in to Oscam Server": "Gebruikersnaam om in te loggen op Oscam Server",
     "Password": "Wachtwoord",
-    "Password to login in to Oscam Server": "assword om in te loggen op Oscam Server"
+    "Password to login in to Oscam Server": "assword om in te loggen op Oscam Server",
+    "Oscam Information": "Oscam-informatie",
+    "Version": "Versie",
+    "Revision": "Herziening",
+    "Starttime": "Starttijd",
+    "Uptime": "Uptime"
 }

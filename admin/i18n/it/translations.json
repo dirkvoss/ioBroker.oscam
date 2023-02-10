@@ -10,5 +10,10 @@
     "User": "Utente",
     "User name to login in to Oscam Server": "Nome utente per accedere a Oscam Server",
     "Password": "Parola d'ordine",
-    "Password to login in to Oscam Server": "assword per accedere a Oscam Server"
+    "Password to login in to Oscam Server": "assword per accedere a Oscam Server",
+    "Oscam Information": "Informazioni Oscam",
+    "Version": "Versione",
+    "Revision": "Revisione",
+    "Starttime": "Ora di inizio",
+    "Uptime": "Tempo di attività"
 }
