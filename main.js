@@ -1,6 +1,7 @@
 'use strict';
 
 const utils = require('@iobroker/adapter-core');
+const parseString = require('xml2js').parseString;
 
 class Oscam extends utils.Adapter {
 
@@ -12,11 +13,19 @@ class Oscam extends utils.Adapter {
             ...options,
             name: 'oscam',
         });
+
+        this.oscamIpAdress = null;
+        this.oscamPort = null;
+        this.oscamUser = null;
+        this.oscamPassword = null;
+        this.oscamUrl = null;
+        this.digestRequest = null;
+        this.karten = [];
+
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
-        // this.on('objectChange', this.onObjectChange.bind(this));
-        // this.on('message', this.onMessage.bind(this));
         this.on('unload', this.onUnload.bind(this));
+
     }
 
     /**
@@ -24,29 +33,60 @@ class Oscam extends utils.Adapter {
      */
     async onReady() {
 
-        const oscamIpAdress = 'http://' + this.config.serverIp ;
-        const oscamPort = this.config.serverPort;
-        const oscamUser = this.config.userName;
-        const oscamPassword = this.config.password;
-        const oscamUrl = '/oscamapi.html?part=status';
+        this.log.debug(`instance config: ${JSON.stringify(this.config)}`);
 
-        const digestRequest = require('request-digest')(oscamUser, oscamPassword);
-        digestRequest.requestAsync({
-            host: oscamIpAdress,
-            path: oscamUrl,
-            port: oscamPort,
+        if (!this.config.serverIp || !this.config.password || !this.config.serverPort || !this.config.userName) {
+            this.log.error (`Check your configuration. Configuation is not complete !`);
+            return;
+        }
+
+        this.oscamIpAdress = 'http://' + this.config.serverIp ;
+        this.oscamPort = this.config.serverPort;
+        this.oscamUser = this.config.userName;
+        this.oscamPassword = this.config.password;
+        this.oscamUrl = '/oscamapi.html?part=status';
+
+        this.digestRequest = require('request-digest')(this.oscamUser, this.oscamPassword);
+        this.digestRequest.requestAsync({
+            host: this.oscamIpAdress,
+            port: this.oscamPort,
+            path: this.oscamUrl,
             method: 'GET',
             excludePort: false,
             headers: {
                 'Custom-Header': 'OneValue',
                 'Other-Custom-Header': 'OtherValue'
             }
-        }).then(function (response) {
-            decode2obj (response.body);
-        }).catch(function (error) {
-            console.log(error.statusCode);
-            console.log(error.body);
+        }).then( (response) => {
+            this.log.info (`Connection established to ${this.oscamIpAdress} Port ${this.oscamPort} and Url ${this.oscamUrl}`);
+            parseString(response.body, async (err, result) => {
+                // get Oscam Information
+                this.log.debug (`Parsing XML Body Response to JSON`);
+                this.log.debug (`${response.body}`);
+
+                await this.setStateAsync('oscaminfo.Version',  {val: result.oscam.$.version, ack: true} );
+                await this.setStateAsync('oscaminfo.Revision',  {val: result.oscam.$.revision, ack: true} );
+                await this.setStateAsync('oscaminfo.Starttime',  {val: result.oscam.$.starttime, ack: true} );
+                await this.setStateAsync('oscaminfo.Uptime',  {val: result.oscam.$.uptime, ack: true} );
+
+                this.karten=result.oscam.status[0].client;
+
+                this.karten.forEach ((karte) => {
+                    if (karte.$.type == 'r') {
+                        this.log.debug (`${JSON.stringify(karte.$.type)}`);
+                    }
+                });
+
+                //this.log.info(`${JSON.stringify(this.cards)}`);
+            });
+        }).catch( (error) => {
+            this.log.error(error.statusCode);
+            this.log.error(error.body);
         });
+
+
+        // Alle eigenen States abonnieren
+        await this.subscribeStatesAsync('*');
     }
 
 
@@ -131,8 +171,3 @@ if (require.main !== module) {
     // otherwise start the instance directly
     new Oscam();
 }
-
-function decode2obj(response) {
-    console.log (response);
-}
-
