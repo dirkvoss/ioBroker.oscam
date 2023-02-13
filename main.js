@@ -219,6 +219,8 @@ class Oscam extends utils.Adapter {
                     }
                 });
             });
+            // Update connection state.
+            this.setState('info.connection', true, true);
         }).catch( (error) => {
             this.log.error(error.statusCode);
             this.log.error(error.body);
@@ -227,9 +229,6 @@ class Oscam extends utils.Adapter {
 
         // Alle eigenen States abonnieren
         await this.subscribeStatesAsync('*');
-
-        // Update connection state.
-        this.setState('info.connection', true, true);
     }
 
 

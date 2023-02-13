@@ -77,6 +77,8 @@
             }
         ]
     },
+    "encryptedNative": ["password"],
+    "protectedNative": ["password"],
     "native": {
         "serverIp": "",
         "serverPort": 8080,
