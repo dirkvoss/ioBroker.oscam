@@ -73,7 +73,37 @@ class Oscam extends utils.Adapter {
 
                 this.karten.forEach ((karte) => {
                     if (karte.$.type == 'r') {
-                        this.log.debug (`${JSON.stringify(karte.$.type)}`);
+                        // only real cards with type "r" are relevant
+                        // karte.$.name, karte.$.protocol,karte.$.au,karte.times[0].$.login,karte.times[0].$.login,karte.connection[0]._
+                        this.log.debug (`${JSON.stringify(karte.connection[0]._)}`);
+
+                        // Create channel for every reader
+                        const channel2create = 'cards.' +  karte.$.name;
+                        this.setObjectNotExists(channel2create, {
+                            type: 'channel',
+                            common: {
+                                name: 'card',
+                                role: 'text'
+                            },
+                            native: {}
+                        });
+                        //Create Status for every reader
+                        const name2create = channel2create  + '.Status';
+                        this.setObjectNotExists(name2create, {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'Name',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+                        //Set Status for every reader
+                        this.setStateAsync(name2create,  {val: karte.connection[0]._, ack: true} );
+
+
                     }
                 });
 
