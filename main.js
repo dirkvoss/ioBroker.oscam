@@ -33,6 +33,8 @@ class Oscam extends utils.Adapter {
      */
     async onReady() {
 
+        await this.setStateAsync('info.connection', false, true);
+
         this.log.debug(`instance config: ${JSON.stringify(this.config)}`);
 
         if (!this.config.serverIp || !this.config.password || !this.config.serverPort || !this.config.userName) {
@@ -212,8 +214,7 @@ class Oscam extends utils.Adapter {
                             'native': {}
                         });
                         this.setStateAsync(channel4reader  + '.SRVID',  {val: karte.request[0].$.srvid, ack: true} );
-
-                        this.log.debug (`${JSON.stringify(karte.request[0].$.caid)}`);
+                        //this.log.debug (`${JSON.stringify(karte.request[0].$.caid)}`);
 
                     }
                 });
@@ -226,6 +227,9 @@ class Oscam extends utils.Adapter {
 
         // Alle eigenen States abonnieren
         await this.subscribeStatesAsync('*');
+
+        // Update connection state.
+        this.setState('info.connection', true, true);
     }
 
 
