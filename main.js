@@ -72,14 +72,13 @@ class Oscam extends utils.Adapter {
                 this.karten=result.oscam.status[0].client;
 
                 this.karten.forEach ((karte) => {
+
+                    // only real cards with type "r" are relevant
                     if (karte.$.type == 'r') {
-                        // only real cards with type "r" are relevant
-                        // karte.$.name, karte.$.protocol,karte.$.au,karte.times[0].$.login,karte.times[0].$.login,karte.connection[0]._
-                        this.log.debug (`${JSON.stringify(karte.connection[0]._)}`);
 
                         // Create channel for every reader
-                        const channel2create = 'cards.' +  karte.$.name;
-                        this.setObjectNotExists(channel2create, {
+                        const channel4reader = 'cards.' +  karte.$.name;
+                        this.setObjectNotExists(channel4reader, {
                             type: 'channel',
                             common: {
                                 name: 'card',
@@ -87,27 +86,137 @@ class Oscam extends utils.Adapter {
                             },
                             native: {}
                         });
-                        //Create Status for every reader
-                        const name2create = channel2create  + '.Status';
-                        this.setObjectNotExists(name2create, {
+
+                        //Create Status and set Status for every reader
+                        this.setObjectNotExists(channel4reader  + '.Status', {
                             'type': 'state',
                             'common': {
                                 'role': 'text',
-                                'name': 'Name',
+                                'name': 'Status',
                                 'type': 'string',
                                 'read':  true,
                                 'write': false
                             },
                             'native': {}
                         });
-                        //Set Status for every reader
-                        this.setStateAsync(name2create,  {val: karte.connection[0]._, ack: true} );
+                        this.setStateAsync(channel4reader  + '.Status',  {val: karte.connection[0]._, ack: true} );
 
+                        //Create Protocol and set Protocol for every reader
+                        this.setObjectNotExists(channel4reader  + '.Protocol', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'Protocol',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+                        this.setStateAsync(channel4reader  + '.Protocol',  {val: karte.$.protocol, ack: true} );
+
+                        //Create AU Flag and set AU Flag for every reader
+                        this.setObjectNotExists(channel4reader  + '.AU', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'Autoupdate',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+                        this.setStateAsync(channel4reader  + '.AU',  {val: karte.$.au, ack: true} );
+
+                        //Create login time  and set login time for every reader
+                        this.setObjectNotExists(channel4reader  + '.Login time', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'Login time',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+                        this.setStateAsync(channel4reader  + '.Login time',  {val: karte.times[0].$.login, ack: true} );
+
+                        //Create uptime time  and set uptime time for every reader
+                        this.setObjectNotExists(channel4reader  + '.Uptime', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'Uptime in seconds',
+                                'type': 'number',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+                        this.setStateAsync(channel4reader  + '.Uptime',  {val: karte.times[0].$.online, ack: true} );
+
+                        //Create Description and set Description for every reader
+                        this.setObjectNotExists(channel4reader  + '.Description', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'Description',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+                        this.setStateAsync(channel4reader  + '.Description',  {val: karte.$.desc, ack: true} );
+
+                        //Create caid and set caid for every reader
+                        this.setObjectNotExists(channel4reader  + '.CAID', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'CAID',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+                        this.setStateAsync(channel4reader  + '.CAID',  {val: karte.request[0].$.caid, ack: true} );
+
+                        //Create provid and set provid for every reader
+                        this.setObjectNotExists(channel4reader  + '.PROVID', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'PROVID',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+                        this.setStateAsync(channel4reader  + '.PROVID',  {val: karte.request[0].$.provid, ack: true} );
+
+                        //Create srvid and set srvid for every reader
+                        this.setObjectNotExists(channel4reader  + '.SRVID', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'SRVID',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+                        this.setStateAsync(channel4reader  + '.SRVID',  {val: karte.request[0].$.srvid, ack: true} );
+
+                        this.log.debug (`${JSON.stringify(karte.request[0].$.caid)}`);
 
                     }
                 });
-
-                //this.log.info(`${JSON.stringify(this.cards)}`);
             });
         }).catch( (error) => {
             this.log.error(error.statusCode);
