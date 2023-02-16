@@ -61,6 +61,7 @@
         "mode": "daemon",
         "type": "multimedia",
         "compact": true,
+        "messagebox": false,
         "connectionType": "local",
         "dataSource": "poll",
         "adminUI": {
