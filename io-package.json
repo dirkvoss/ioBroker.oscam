@@ -164,7 +164,7 @@
             "common": {
                 "role": "text",
                 "name": "Uptime",
-                "type": "string",
+                "type": "number",
                 "read": true,
                 "write": false
             },

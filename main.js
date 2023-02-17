@@ -56,42 +56,14 @@ class Oscam extends utils.Adapter {
         this.setStateAsync('info.connection', true, true);
     }
 
-
-
-    /**
-     * Is called when adapter shuts down - callback has to be called under any circumstances!
-     * @param {() => void} callback
-     */
     onUnload(callback) {
         try {
-            // Here you must clear all timeouts or intervals that may still be active
-            // clearTimeout(timeout1);
-            // clearTimeout(timeout2);
-            // ...
-            // clearInterval(interval1);
-
+            clearInterval(this.updateInterval);
             callback();
         } catch (e) {
             callback();
         }
     }
-
-    // If you need to react to object changes, uncomment the following block and the corresponding line in the constructor.
-    // You also need to subscribe to the objects with `this.subscribeObjects`, similar to `this.subscribeStates`.
-    // /**
-    //  * Is called if a subscribed object changes
-    //  * @param {string} id
-    //  * @param {ioBroker.Object | null | undefined} obj
-    //  */
-    // onObjectChange(id, obj) {
-    //     if (obj) {
-    //         // The object was changed
-    //         this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
-    //     } else {
-    //         // The object was deleted
-    //         this.log.info(`object ${id} deleted`);
-    //     }
-    // }
 
     /**
      * Is called if a subscribed state changes
@@ -101,10 +73,10 @@ class Oscam extends utils.Adapter {
     onStateChange(id, state) {
         if (state) {
             // The state was changed
-            this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+            //this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
         } else {
             // The state was deleted
-            this.log.info(`state ${id} deleted`);
+            //this.log.info(`state ${id} deleted`);
         }
     }
 
@@ -159,7 +131,7 @@ class Oscam extends utils.Adapter {
                 await this.setStateAsync('oscaminfo.Version',  {val: result.oscam.$.version, ack: true} );
                 await this.setStateAsync('oscaminfo.Revision',  {val: result.oscam.$.revision, ack: true} );
                 await this.setStateAsync('oscaminfo.Starttime',  {val: result.oscam.$.starttime, ack: true} );
-                await this.setStateAsync('oscaminfo.Uptime',  {val: result.oscam.$.uptime, ack: true} );
+                await this.setStateAsync('oscaminfo.Uptime',  {val: Number(result.oscam.$.uptime), ack: true} );
 
                 this.karten=result.oscam.status[0].client;
 
@@ -248,7 +220,7 @@ class Oscam extends utils.Adapter {
                             },
                             'native': {}
                         });
-                        this.setStateAsync(channel4reader  + '.Uptime',  {val: karte.times[0].$.online, ack: true} );
+                        this.setStateAsync(channel4reader  + '.Uptime',  {val: Number(karte.times[0].$.online), ack: true} );
 
                         //Create Description and set Description for every reader
                         this.setObjectNotExists(channel4reader  + '.Description', {
