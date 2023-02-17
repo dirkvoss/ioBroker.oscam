@@ -15,5 +15,18 @@
     "Version": "Версия",
     "Revision": "Редакция",
     "Starttime": "Время начала",
-    "Uptime": "Время безотказной работы"
+    "Uptime": "Время безотказной работы",
+    "Check your configuration. Configuation is not complete": "Проверьте свою конфигурацию. Конфигурация не завершена",
+    "card": "карта",
+    "Status": "Положение дел",
+    "Protocol": "Протокол",
+    "Autoupdate": "Автоматическое обновление",
+    "Login time": "Время входа",
+    "Uptime in seconds": "Время работы в секундах",
+    "Description": "Описание",
+    "Information": "Информация",
+    "Device or service connected": "Устройство или служба подключены",
+    "Intervall in seconds how often the OSCAM server will be refreshed": "Интервал в секундах, как часто сервер OSCAM будет обновляться",
+    "ecmtime": "ecmtime",
+    "ecmhistory": "история"
 }

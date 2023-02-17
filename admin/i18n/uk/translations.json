@@ -13,5 +13,18 @@
     "Version": "Версія",
     "Revision": "Ревізія",
     "Starttime": "Час початку",
-    "Uptime": "Час роботи"
+    "Uptime": "Час роботи",
+    "Check your configuration. Configuation is not complete": "Перевірте конфігурацію. Конфігурація не завершена",
+    "card": "картку",
+    "Status": "Статус",
+    "Protocol": "Протокол",
+    "Autoupdate": "Автооновлення",
+    "Login time": "Час входу",
+    "Uptime in seconds": "Час роботи в секундах",
+    "Description": "опис",
+    "Information": "Інформація",
+    "Device or service connected": "Пристрій або послугу підключено",
+    "Intervall in seconds how often the OSCAM server will be refreshed": "Інтервал у секундах, як часто сервер OSCAM буде оновлюватися",
+    "ecmtime": "ecmtime",
+    "ecmhistory": "ecmhistory"
 }

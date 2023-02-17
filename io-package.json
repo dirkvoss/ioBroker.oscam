@@ -78,13 +78,18 @@
             }
         ]
     },
-    "encryptedNative": ["password"],
-    "protectedNative": ["password"],
+    "encryptedNative": [
+        "password"
+    ],
+    "protectedNative": [
+        "password"
+    ],
     "native": {
         "serverIp": "",
         "serverPort": 8080,
         "userName": "",
-        "password": ""
+        "password": "",
+        "refreshtime": 300
     },
     "objects": [],
     "instanceObjects": [

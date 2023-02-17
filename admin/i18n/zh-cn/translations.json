@@ -15,5 +15,18 @@
     "Version": "版本",
     "Revision": "修订",
     "Starttime": "开始时间",
-    "Uptime": "正常运行时间"
+    "Uptime": "正常运行时间",
+    "Check your configuration. Configuation is not complete": "检查您的配置。配置未完成",
+    "card": "卡片",
+    "Status": "地位",
+    "Protocol": "协议",
+    "Autoupdate": "自动更新",
+    "Login time": "登录时间",
+    "Uptime in seconds": "正常运行时间（秒）",
+    "Description": "描述",
+    "Information": "信息",
+    "Device or service connected": "连接的设备或服务",
+    "Intervall in seconds how often the OSCAM server will be refreshed": "以秒为单位的间隔 OSCAM 服务器刷新的频率",
+    "ecmtime": "时间",
+    "ecmhistory": "电子历史"
 }

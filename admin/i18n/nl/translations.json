@@ -15,5 +15,18 @@
     "Version": "Versie",
     "Revision": "Herziening",
     "Starttime": "Starttijd",
-    "Uptime": "Uptime"
+    "Uptime": "Uptime",
+    "Check your configuration. Configuation is not complete": "Controleer uw configuratie. Configuratie is niet compleet",
+    "card": "kaart",
+    "Status": "Toestand",
+    "Protocol": "Protocol",
+    "Autoupdate": "Auto update",
+    "Login time": "Inlog tijd",
+    "Uptime in seconds": "Uptime in seconden",
+    "Description": "Beschrijving",
+    "Information": "Informatie",
+    "Device or service connected": "Apparaat of service aangesloten",
+    "Intervall in seconds how often the OSCAM server will be refreshed": "Intervall in seconden hoe vaak de OSCAM-server wordt vernieuwd",
+    "ecmtime": "ecmtijd",
+    "ecmhistory": "ecmgeschiedenis"
 }

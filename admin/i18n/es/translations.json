@@ -15,5 +15,18 @@
     "Version": "Versión",
     "Revision": "Revisión",
     "Starttime": "Hora de inicio",
-    "Uptime": "tiempo de actividad"
+    "Uptime": "tiempo de actividad",
+    "Check your configuration. Configuation is not complete": "Verifique su configuración. La configuración no está completa",
+    "card": "tarjeta",
+    "Status": "Estado",
+    "Protocol": "Protocolo",
+    "Autoupdate": "Actualización automática",
+    "Login time": "Hora de inicio de sesión",
+    "Uptime in seconds": "Tiempo de actividad en segundos",
+    "Description": "Descripción",
+    "Information": "Información",
+    "Device or service connected": "Dispositivo o servicio conectado",
+    "Intervall in seconds how often the OSCAM server will be refreshed": "Intervalo en segundos con qué frecuencia se actualizará el servidor OSCAM",
+    "ecmtime": "ecmtime",
+    "ecmhistory": "ecmhistoria"
 }

@@ -44,10 +44,11 @@ class Oscam extends utils.Adapter {
         this.oscamUser = this.config.userName;
         this.oscamPassword = this.config.password;
         this.oscamUrl = '/oscamapi.html?part=status';
+        this.refreshTime = this.config.refreshtime;
 
         this.updateInterval = setInterval(async () => {
             await this.getStatusAndWriteDataPoints();
-        }, 180000);
+        }, this.refreshTime * 1000);
 
         // Alle eigenen States abonnieren
         this.subscribeStatesAsync('*');
@@ -126,6 +127,17 @@ class Oscam extends utils.Adapter {
     // }
 
     async getStatusAndWriteDataPoints () {
+
+        const getAUStatus = (stat) => {
+            const defaultKey = 'not defined';
+
+            const statMap = {
+                '-1' : 'On',
+                '1'  : 'Auto',
+            };
+            return statMap[stat] ?? statMap[defaultKey];
+        };
+
         this.digestRequest = require('request-digest')(this.oscamUser, this.oscamPassword);
         this.digestRequest.requestAsync({
             host: this.oscamIpAdress,
@@ -207,7 +219,8 @@ class Oscam extends utils.Adapter {
                             },
                             'native': {}
                         });
-                        this.setStateAsync(channel4reader  + '.AU',  {val: karte.$.au, ack: true} );
+
+                        this.setStateAsync(channel4reader  + '.AU',  {val: getAUStatus(karte.$.au), ack: true} );
 
                         //Create login time  and set login time for every reader
                         this.setObjectNotExists(channel4reader  + '.Login time', {
@@ -293,6 +306,37 @@ class Oscam extends utils.Adapter {
                         });
 
                         this.setStateAsync(channel4reader  + '.SRVID',  {val: karte.request[0].$.srvid, ack: true} );
+
+                        //Create ecmtime for every reader
+                        this.setObjectNotExists(channel4reader  + '.ecmtime', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'ecmtime',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+
+                        this.setStateAsync(channel4reader  + '.ecmtime',  {val: karte.request[0].$.ecmtime, ack: true} );
+
+                        //Create ecmtime for every reader
+                        this.setObjectNotExists(channel4reader  + '.ecmhistory', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'text',
+                                'name': 'ecmhistory',
+                                'type': 'string',
+                                'read':  true,
+                                'write': false
+                            },
+                            'native': {}
+                        });
+
+                        this.setStateAsync(channel4reader  + '.ecmhistory',  {val: karte.request[0].$.ecmhistory, ack: true} );
+
                         //this.log.debug (`${JSON.stringify(karte.request[0].$.caid)}`);
                     } // if
                 }); // foreach

@@ -13,5 +13,19 @@
     "Version": "Version",
     "Revision": "Revision",
     "Starttime": "Starttime",
-    "Uptime": "Uptime"
+    "Uptime": "Uptime",
+    "Check your configuration. Configuation is not complete": "Check your configuration. Configuation is not complete",
+    "card": "card",
+    "Status": "Status",
+    "Protocol": "Protocol",
+    "Autoupdate": "Autoupdate",
+    "Login time": "Login time",
+    "Uptime in seconds": "Uptime in seconds",
+    "Description": "Description",
+    "Information": "Information",
+    "Device or service connected": "Device or service connected",
+    "Intervall in seconds how often the OSCAM server will be refreshed": "Intervall in seconds how often the OSCAM server will be refreshed",
+    "ecmtime": "ecmtime",
+    "ecmhistory": "ecmhistory"
+
 }

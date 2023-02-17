@@ -39,6 +39,15 @@
                     "lg": 6,
                     "label": "Password",
                     "help": "Password to login in to Oscam Server"
+                },
+                "refreshtime": {
+                    "type": "number",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "min": 1,
+                    "label": "Refresh time",
+                    "help": "Intervall in seconds how often the OSCAM server will be refreshed"
                 }
             }
         }
