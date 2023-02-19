@@ -29,9 +29,6 @@ integrate Oscam server in Iobrober
 ### 0.0.1 (2023-02-09)
 * (dirkvoss) Added Server and Port to Options
 
-
- Current adapter version 0.0.1 not found in README.md
-
 ## License
 MIT License
 
