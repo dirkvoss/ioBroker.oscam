@@ -21,10 +21,13 @@ integrate Oscam server in Iobrober
 -->
 
 ### **WORK IN PROGRESS**
-* (dirkvoss) Added User , Password and first connect to Oscam Server
+* (dirkvoss) first stable version
 
-### ** 0.0.1 (2023-02-09)
+### 0.0.1 (2023-02-09)
 * (dirkvoss) Added Server and Port to Options
+
+
+ Current adapter version 0.0.1 not found in README.md
 
 ## License
 MIT License
