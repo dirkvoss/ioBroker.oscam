@@ -35,9 +35,6 @@ class Oscam extends utils.Adapter {
 
         this.log.debug(`instance config: ${JSON.stringify(this.config)}`);
 
-        // after start let´s first get one time all dp´s
-        await this.getStatusAndWriteDataPoints();
-
         if (!this.config.serverIp || !this.config.password || !this.config.serverPort || !this.config.userName || !this.config.refreshtime) {
             this.log.error (`Check your configuration. Configuation is not complete !`);
             return;
@@ -49,6 +46,9 @@ class Oscam extends utils.Adapter {
         this.oscamPassword = this.config.password;
         this.oscamUrl = '/oscamapi.html?part=status';
         this.refreshTime = this.config.refreshtime;
+
+        // after start let´s first get one time all dp´s
+        await this.getStatusAndWriteDataPoints();
 
         this.updateInterval = setInterval(async () => {
             await this.getStatusAndWriteDataPoints();
