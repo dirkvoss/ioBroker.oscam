@@ -20,8 +20,8 @@ integrate Oscam server in Iobrober
     ### **WORK IN PROGRESS**
 -->
 
- ### **WORK IN PROGRESS**
-(dirkvoss) fixed problems with github actions
+### **WORK IN PROGRESS**
+* (dirkvoss) fixed problems with github actions
 
 ### 0.0.2 (2023-02-19)
 * (dirkvoss) first stable version
