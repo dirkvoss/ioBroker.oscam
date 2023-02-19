@@ -1,6 +1,6 @@
 {
   "name": "iobroker.oscam",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "integrate Oscam server in Iobrober",
   "author": {
     "name": "Dirk Voss",

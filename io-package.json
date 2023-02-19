@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "oscam",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "news": {
+      "0.0.3": {
+        "en": "fixed problems with github actions",
+        "de": "probleme mit github-aktionen behoben",
+        "ru": "фиксированные проблемы с действиями github",
+        "pt": "problemas fixos com ações github",
+        "nl": "problemen met github acties",
+        "fr": "problèmes fixes avec des actions github",
+        "it": "problemi fissi con azioni github",
+        "es": "problemas fijos con acciones de github",
+        "pl": "stałe problemy z działaniami githu",
+        "uk": "виправлені проблеми з діями github",
+        "zh-cn": "b. 包商行动的固定问题"
+      },
       "0.0.2": {
         "en": "first stable version",
         "de": "erste stabile version",
