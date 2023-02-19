@@ -19,6 +19,7 @@ class Oscam extends utils.Adapter {
         this.oscamUser = null;
         this.oscamPassword = null;
         this.oscamUrl = null;
+        this.refreshTime = null;
         this.digestRequest = null;
         this.karten = [];
 
@@ -34,7 +35,7 @@ class Oscam extends utils.Adapter {
 
         this.log.debug(`instance config: ${JSON.stringify(this.config)}`);
 
-        if (!this.config.serverIp || !this.config.password || !this.config.serverPort || !this.config.userName) {
+        if (!this.config.serverIp || !this.config.password || !this.config.serverPort || !this.config.userName || !this.config.refreshtime) {
             this.log.error (`Check your configuration. Configuation is not complete !`);
             return;
         }
