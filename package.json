@@ -65,7 +65,9 @@
     "check": "tsc --noEmit -p tsconfig.check.json",
     "lint": "eslint .",
     "translate": "translate-adapter",
-    "release": "release-script"
+    "release": "release-script patch --yes",
+    "release-minor": "release-script minor patch --yes",
+    "release-major": "release-script major patch --yes"
   },
   "bugs": {
     "url": "https://github.com/dirkvoss/ioBroker.oscam/issues"
