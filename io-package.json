@@ -1,207 +1,220 @@
 {
-    "common": {
-        "name": "oscam",
-        "version": "0.0.3",
-        "news": {
-            "0.0.3": {
-                "en": "fixed problems with github actions",
-                "de": "probleme mit github-aktionen behoben",
-                "ru": "фиксированные проблемы с действиями github",
-                "pt": "problemas fixos com ações github",
-                "nl": "problemen met github acties",
-                "fr": "problèmes fixes avec des actions github",
-                "it": "problemi fissi con azioni github",
-                "es": "problemas fijos con acciones de github",
-                "pl": "stałe problemy z działaniami githu",
-                "uk": "виправлені проблеми з діями github",
-                "zh-cn": "b. 包商行动的固定问题"
-            },
-            "0.0.2": {
-                "en": "first stable version",
-                "de": "erste stabile version",
-                "ru": "первая стабильная версия",
-                "pt": "primeira versão estável",
-                "nl": "eerste stabiele versie",
-                "fr": "première version stable",
-                "it": "prima versione stabile",
-                "es": "primera versión estable",
-                "pl": "pierwsza wersja stabilna",
-                "uk": "перший стабільний варіант",
-                "zh-cn": "第一个稳定版本"
-            },
-            "0.0.1": {
-                "en": "initial release",
-                "de": "Erstveröffentlichung",
-                "ru": "Начальная версия",
-                "pt": "lançamento inicial",
-                "nl": "Eerste uitgave",
-                "fr": "Première version",
-                "it": "Versione iniziale",
-                "es": "Versión inicial",
-                "pl": "Pierwsze wydanie",
-                "zh-cn": "首次出版",
-                "uk": "початковий випуск"
-            }
-        },
-        "titleLang": {
-            "en": "OSCAM",
-            "de": "OSCAM",
-            "ru": "ОСКАМ",
-            "pt": "OSCAM",
-            "nl": "OSCAM",
-            "fr": "OSCAM",
-            "it": "OSCAM",
-            "es": "OSCAM",
-            "pl": "OSCAM",
-            "zh-cn": "奥萨姆",
-            "uk": "OSCAM"
-        },
-        "desc": {
-            "en": "integrate Oscam server in Iobrober",
-            "de": "Oscam-Server in Iorobober integrieren",
-            "ru": "интегрировать сервер Oscam в Iobrober",
-            "pt": "integrar o servidor Oscam no Iobrober",
-            "nl": "Oscam-server integreren in Iobrober",
-            "fr": "intégrer le serveur Oscam dans Iobrober",
-            "it": "integrare il server Oscam in Iobrober",
-            "es": "integrar servidor Oscam en Iobrober",
-            "pl": "zintegruj serwer Oscam w Iobrober",
-            "zh-cn": "在 Iobrober 中集成 Oscam 服务器",
-            "uk": "інтегрувати сервер Oscam в Iobrober"
-        },
-        "authors": [
-            "Dirk Voss <mail@dirk-voss.com>"
-        ],
-        "keywords": [
-            "oscam"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "oscam.png",
-        "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/dirkvoss/ioBroker.oscam/main/admin/oscam.png",
-        "readme": "https://github.com/dirkvoss/ioBroker.oscam/blob/main/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "multimedia",
-        "compact": true,
-        "messagebox": false,
-        "connectionType": "local",
-        "dataSource": "poll",
-        "adminUI": {
-            "config": "json"
-        },
-        "dependencies": [
-            {
-                "js-controller": ">=3.3.22"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=5.1.13"
-            }
-        ]
+  "common": {
+    "name": "oscam",
+    "version": "0.0.4",
+    "news": {
+      "0.0.4": {
+        "en": "fixed problem with login if oscam server has no user and password and handle 401 error on connection",
+        "de": "problem mit der anmeldung behoben, wenn oscam server keinen benutzer und passwort hat und 401 fehler auf der verbindung behandelt",
+        "ru": "исправленная проблема с входом, если сервер oscam не имеет пользователя и пароля и обрабатывает ошибка 401 на связи",
+        "pt": "problema fixo com login se o servidor oscam não tem usuário e senha e lidar com erro 401 na conexão",
+        "nl": "een probleem met login als oscam server geen gebruiker en wachtwoord heeft en 401 fouten behandelt",
+        "fr": "problème fixe avec login si le serveur oscam n'a pas d'utilisateur et mot de passe et gère l'erreur 401 sur la connexion",
+        "it": "problema fisso con login se il server oscam non ha utente e password e maneggia 401 errore sulla connessione",
+        "es": "problema fijo con el inicio de sesión si el servidor oscam no tiene usuario y contraseña y manejar error 401 en conexión",
+        "pl": "stały problem z loginą, jeśli serwer oscam nie posiada użytkownika i hasła, a następnie obserwuje błędy 401 w związku z połączeniem",
+        "uk": "виправлена проблема з логіном, якщо сервер oscam не має користувача і пароля і ручка 401 помилка на підключенні",
+        "zh-cn": "如果oscam服务器没有用户和密码,并处理401个与逻辑有关的错误,则固定问题与逻辑无关。"
+      },
+      "0.0.3": {
+        "en": "fixed problems with github actions",
+        "de": "probleme mit github-aktionen behoben",
+        "ru": "фиксированные проблемы с действиями github",
+        "pt": "problemas fixos com ações github",
+        "nl": "problemen met github acties",
+        "fr": "problèmes fixes avec des actions github",
+        "it": "problemi fissi con azioni github",
+        "es": "problemas fijos con acciones de github",
+        "pl": "stałe problemy z działaniami githu",
+        "uk": "виправлені проблеми з діями github",
+        "zh-cn": "b. 包商行动的固定问题"
+      },
+      "0.0.2": {
+        "en": "first stable version",
+        "de": "erste stabile version",
+        "ru": "первая стабильная версия",
+        "pt": "primeira versão estável",
+        "nl": "eerste stabiele versie",
+        "fr": "première version stable",
+        "it": "prima versione stabile",
+        "es": "primera versión estable",
+        "pl": "pierwsza wersja stabilna",
+        "uk": "перший стабільний варіант",
+        "zh-cn": "第一个稳定版本"
+      },
+      "0.0.1": {
+        "en": "initial release",
+        "de": "Erstveröffentlichung",
+        "ru": "Начальная версия",
+        "pt": "lançamento inicial",
+        "nl": "Eerste uitgave",
+        "fr": "Première version",
+        "it": "Versione iniziale",
+        "es": "Versión inicial",
+        "pl": "Pierwsze wydanie",
+        "zh-cn": "首次出版",
+        "uk": "початковий випуск"
+      }
     },
-    "encryptedNative": [
-        "password"
-    ],
-    "protectedNative": [
-        "password"
-    ],
-    "native": {
-        "serverIp": "",
-        "serverPort": 8080,
-        "userName": "",
-        "password": "",
-        "refreshtime": 300
+    "titleLang": {
+      "en": "OSCAM",
+      "de": "OSCAM",
+      "ru": "ОСКАМ",
+      "pt": "OSCAM",
+      "nl": "OSCAM",
+      "fr": "OSCAM",
+      "it": "OSCAM",
+      "es": "OSCAM",
+      "pl": "OSCAM",
+      "zh-cn": "奥萨姆",
+      "uk": "OSCAM"
     },
-    "objects": [],
-    "instanceObjects": [
-        {
-            "_id": "info",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "info.connection",
-            "type": "state",
-            "common": {
-                "role": "indicator.connected",
-                "name": "Device or service connected",
-                "type": "boolean",
-                "read": true,
-                "write": false,
-                "def": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "oscaminfo",
-            "type": "channel",
-            "common": {
-                "name": "Oscam Information"
-            },
-            "native": {}
-        },
-        {
-            "_id": "oscaminfo.Version",
-            "type": "state",
-            "common": {
-                "role": "text",
-                "name": "Version",
-                "type": "string",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "oscaminfo.Revision",
-            "type": "state",
-            "common": {
-                "role": "text",
-                "name": "Revision",
-                "type": "string",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "oscaminfo.Starttime",
-            "type": "state",
-            "common": {
-                "role": "text",
-                "name": "Starttime",
-                "type": "string",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "oscaminfo.Uptime",
-            "type": "state",
-            "common": {
-                "role": "text",
-                "name": "Uptime",
-                "type": "number",
-                "read": true,
-                "write": false
-            },
-            "native": {}
-        },
-        {
-            "_id": "cards",
-            "type": "channel",
-            "common": {
-                "name": "Information"
-            },
-            "native": {}
-        }
+    "desc": {
+      "en": "integrate Oscam server in Iobrober",
+      "de": "Oscam-Server in Iorobober integrieren",
+      "ru": "интегрировать сервер Oscam в Iobrober",
+      "pt": "integrar o servidor Oscam no Iobrober",
+      "nl": "Oscam-server integreren in Iobrober",
+      "fr": "intégrer le serveur Oscam dans Iobrober",
+      "it": "integrare il server Oscam in Iobrober",
+      "es": "integrar servidor Oscam en Iobrober",
+      "pl": "zintegruj serwer Oscam w Iobrober",
+      "zh-cn": "在 Iobrober 中集成 Oscam 服务器",
+      "uk": "інтегрувати сервер Oscam в Iobrober"
+    },
+    "authors": [
+      "Dirk Voss <mail@dirk-voss.com>"
+    ],
+    "keywords": [
+      "oscam"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "oscam.png",
+    "enabled": true,
+    "extIcon": "https://raw.githubusercontent.com/dirkvoss/ioBroker.oscam/main/admin/oscam.png",
+    "readme": "https://github.com/dirkvoss/ioBroker.oscam/blob/main/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "multimedia",
+    "compact": true,
+    "messagebox": false,
+    "connectionType": "local",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=3.3.22"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=5.1.13"
+      }
     ]
+  },
+  "encryptedNative": [
+    "password"
+  ],
+  "protectedNative": [
+    "password"
+  ],
+  "native": {
+    "serverIp": "",
+    "serverPort": 8080,
+    "userName": "",
+    "password": "",
+    "refreshtime": 300
+  },
+  "objects": [],
+  "instanceObjects": [
+    {
+      "_id": "info",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "info.connection",
+      "type": "state",
+      "common": {
+        "role": "indicator.connected",
+        "name": "Device or service connected",
+        "type": "boolean",
+        "read": true,
+        "write": false,
+        "def": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "oscaminfo",
+      "type": "channel",
+      "common": {
+        "name": "Oscam Information"
+      },
+      "native": {}
+    },
+    {
+      "_id": "oscaminfo.Version",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "Version",
+        "type": "string",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "oscaminfo.Revision",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "Revision",
+        "type": "string",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "oscaminfo.Starttime",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "Starttime",
+        "type": "string",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "oscaminfo.Uptime",
+      "type": "state",
+      "common": {
+        "role": "text",
+        "name": "Uptime",
+        "type": "number",
+        "read": true,
+        "write": false
+      },
+      "native": {}
+    },
+    {
+      "_id": "cards",
+      "type": "channel",
+      "common": {
+        "name": "Information"
+      },
+      "native": {}
+    }
+  ]
 }
