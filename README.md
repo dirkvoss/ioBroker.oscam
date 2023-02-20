@@ -19,6 +19,9 @@ integrate Oscam server in Iobrober
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+* (dirkvoss) fixed problem with login if oscam server has no user and password and handle 401 error on connection
+
 ### 0.0.3 (2023-02-19)
 * (dirkvoss) fixed problems with github actions
 

@@ -28,5 +28,7 @@
     "Device or service connected": "Gerät oder Dienst verbunden",
     "Intervall in seconds how often the OSCAM server will be refreshed": "Intervall in Sekunden, wie oft der OSCAM-Server aktualisiert wird",
     "ecmtime": "ecmzeit",
-    "ecmhistory": "ecmgeschichte"
+    "ecmhistory": "ecmgeschichte",
+    "Check your configuration. User and/or Password not correct": "Überprüfen Sie Ihre Konfiguration. Benutzer und/oder Passwort nicht korrekt",
+    "Unauthorized access": "Unautorisierter Zugriff"
 }

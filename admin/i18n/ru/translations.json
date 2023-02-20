@@ -28,5 +28,7 @@
     "Device or service connected": "Устройство или служба подключены",
     "Intervall in seconds how often the OSCAM server will be refreshed": "Интервал в секундах, как часто сервер OSCAM будет обновляться",
     "ecmtime": "ecmtime",
-    "ecmhistory": "история"
+    "ecmhistory": "история",
+    "Check your configuration. User and/or Password not correct": "Проверьте свою конфигурацию. Пользователь и/или пароль неверны",
+    "Unauthorized access": "Не авторизованный доступ"
 }

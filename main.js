@@ -26,7 +26,6 @@ class Oscam extends utils.Adapter {
         this.on('ready', this.onReady.bind(this));
         this.on('stateChange', this.onStateChange.bind(this));
         this.on('unload', this.onUnload.bind(this));
-
     }
 
     async onReady() {
@@ -35,7 +34,7 @@ class Oscam extends utils.Adapter {
 
         this.log.debug(`instance config: ${JSON.stringify(this.config)}`);
 
-        if (!this.config.serverIp || !this.config.password || !this.config.serverPort || !this.config.userName || !this.config.refreshtime) {
+        if (!this.config.serverIp || !this.config.serverPort || !this.config.refreshtime) {
             this.log.error (`Check your configuration. Configuation is not complete !`);
             return;
         }
@@ -56,8 +55,6 @@ class Oscam extends utils.Adapter {
 
         // Alle eigenen States abonnieren
         this.subscribeStatesAsync('*');
-
-        this.setStateAsync('info.connection', true, true);
     }
 
     onUnload(callback) {
@@ -313,10 +310,18 @@ class Oscam extends utils.Adapter {
 
                         this.setStateAsync(channel4reader  + '.ecmhistory',  {val: karte.request[0].$.ecmhistory, ack: true} );
 
+                        this.setStateAsync('info.connection', true, true);
+
                         //this.log.debug (`${JSON.stringify(karte.request[0].$.caid)}`);
                     } // if
                 }); // foreach
             }); // parsestring
+        }).catch(error => {
+            this.log.debug(`${error}`);
+            if (error.statusCode == 401) {
+                this.log.error (`Unauthorized access statusCode : ${error.statusCode}`);
+                this.log.error (`Check your configuration. User and/or Password not correct !`);
+            }
         });
     } //getStatusAndWriteDataPoints
 

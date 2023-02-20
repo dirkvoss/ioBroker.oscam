@@ -28,5 +28,7 @@
     "Device or service connected": "连接的设备或服务",
     "Intervall in seconds how often the OSCAM server will be refreshed": "以秒为单位的间隔 OSCAM 服务器刷新的频率",
     "ecmtime": "时间",
-    "ecmhistory": "电子历史"
+    "ecmhistory": "电子历史",
+    "Check your configuration. User and/or Password not correct": "检查您的配置。用户和/或密码不正确",
+    "Unauthorized access": "越权存取"
 }
