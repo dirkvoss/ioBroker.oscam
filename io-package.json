@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "oscam",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "news": {
+      "0.0.5": {
+        "en": "added restart buttons for each reader under objects",
+        "de": "hinzugefügt neustart-tasten für jeden leser unter objekten",
+        "ru": "добавлены перезагрузочные кнопки для каждого читателя под объектами",
+        "pt": "botões de reinício adicionados para cada leitor sob objetos",
+        "nl": "voegde herstartknopen toe voor elke lezer onder objecten",
+        "fr": "boutons de redémarrage ajoutés pour chaque lecteur sous des objets",
+        "it": "pulsanti di riavvio aggiunti per ogni lettore sotto oggetti",
+        "es": "añadido botones de reinicio para cada lector bajo objetos",
+        "pl": "dodać przycisk restartowy dla każdego czytelnika pod obiektami",
+        "uk": "додані кнопки перезавантаження для кожного зчитувача під об'єктами",
+        "zh-cn": "在物体下每名读者的休息和顿"
+      },
       "0.0.4": {
         "en": "fixed problem with login if oscam server has no user and password and handle 401 error on connection",
         "de": "problem mit der anmeldung behoben, wenn oscam server keinen benutzer und passwort hat und 401 fehler auf der verbindung behandelt",

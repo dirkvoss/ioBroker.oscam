@@ -19,7 +19,7 @@ integrate Oscam server in Iobrober
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-### **WORK IN PROGRESS**
+### 0.0.5 (2023-02-21)
 * (dirkvoss) added restart buttons for each reader under objects
 
 ### 0.0.4 (2023-02-20)
