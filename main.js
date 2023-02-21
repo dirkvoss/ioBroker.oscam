@@ -72,12 +72,40 @@ class Oscam extends utils.Adapter {
      * @param {ioBroker.State | null | undefined} state
      */
     onStateChange(id, state) {
-        if (state) {
-            // The state was changed
-            //this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-        } else {
-            // The state was deleted
-            //this.log.info(`state ${id} deleted`);
+
+        // Restart button pressed
+        const result = id.match(/^oscam.\d+.cards.(\w+).restart$/);
+        if ( result && state?.val == true )
+        {
+            const restartURL= '/status.html?action=restart&label=' + result[1];
+
+            this.log.info(`Going to restart Reader : ${result[1]}`);
+
+            // call RestartUrl
+            this.digestRequest = require('request-digest')(this.oscamUser, this.oscamPassword);
+            this.digestRequest.requestAsync({
+                host: this.oscamIpAdress,
+                port: this.oscamPort,
+                path: restartURL,
+                method: 'GET',
+                excludePort: false,
+                headers: {
+                    'Custom-Header': 'OneValue',
+                    'Other-Custom-Header': 'OtherValue'
+                }
+            }).then( () => {
+                this.log.info (`Reader ${result[1]} restarted !`);
+                this.log.debug (`Restart sucessfull to ${this.oscamIpAdress} Port ${this.oscamPort} and Url ${restartURL}`);
+
+            }).catch(error => {
+                this.log.error(`${error}`);
+                if (error.statusCode == 401) {
+                    this.log.error (`Unauthorized access statusCode : ${error.statusCode}`);
+                    this.log.error (`Check your configuration. User and/or Password not correct !`);
+                }
+            });
+
+            this.setStateAsync(id,  {val: false, ack: true} );
         }
     }
 
@@ -309,6 +337,22 @@ class Oscam extends utils.Adapter {
                         });
 
                         this.setStateAsync(channel4reader  + '.ecmhistory',  {val: karte.request[0].$.ecmhistory, ack: true} );
+
+                        //Create Restart buton for every reader
+                        this.setObjectNotExists(channel4reader  + '.restart', {
+                            'type': 'state',
+                            'common': {
+                                'role': 'button',
+                                'name': 'Restart button',
+                                'type': 'boolean',
+                                'read':  false,
+                                'write': true,
+                                'desc': 'Restart'
+                            },
+                            'native': {}
+                        });
+
+                        this.setStateAsync(channel4reader  + '.restart',  {val: false, ack: true} );
 
                         this.setStateAsync('info.connection', true, true);
 
