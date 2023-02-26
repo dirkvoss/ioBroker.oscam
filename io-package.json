@@ -83,17 +83,17 @@
       "uk": "OSCAM"
     },
     "desc": {
-      "en": "integrate Oscam server in Iobrober",
-      "de": "Oscam-Server in Iorobober integrieren",
-      "ru": "интегрировать сервер Oscam в Iobrober",
-      "pt": "integrar o servidor Oscam no Iobrober",
-      "nl": "Oscam-server integreren in Iobrober",
-      "fr": "intégrer le serveur Oscam dans Iobrober",
-      "it": "integrare il server Oscam in Iobrober",
-      "es": "integrar servidor Oscam en Iobrober",
-      "pl": "zintegruj serwer Oscam w Iobrober",
-      "zh-cn": "在 Iobrober 中集成 Oscam 服务器",
-      "uk": "інтегрувати сервер Oscam в Iobrober"
+      "en": "integrate Oscam server in iobroker",
+      "de": "Oscam-Server in iobroker integrieren",
+      "ru": "интегрировать сервер Oscam в iobroker",
+      "pt": "integrar o servidor Oscam no iobroker",
+      "nl": "Oscam-server integreren in iobroker",
+      "fr": "intégrer le serveur Oscam dans iobroker",
+      "it": "integrare il server Oscam in iobroker",
+      "es": "integrar servidor Oscam en iobroker",
+      "pl": "zintegruj serwer Oscam w iobroker",
+      "zh-cn": "在 iobroker 中集成 Oscam 服务器",
+      "uk": "інтегрувати сервер Oscam в iobroker"
     },
     "authors": [
       "Dirk Voss <mail@dirk-voss.com>"
